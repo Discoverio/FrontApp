@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "FrontApp",
-    "slug": "FrontApp",
+    "name": "FrontEnd",
+    "slug": "FrontEnd",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,6 +28,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "build": { 
+      "babel": {
+        "include": [ "@ui-kitten/components" ]
+      }
     }
   }
 }

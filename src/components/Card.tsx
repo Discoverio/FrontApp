@@ -1,37 +1,19 @@
 import React from 'react';
-import { StyleSheet, View, Text, Dimensions } from 'react-native';
-import DeezerWidget from './deezerWidget';
-import s from '../assets/styles/globalStyles';
+import { View } from 'react-native';
+import { Card } from '@ui-kitten/components';
 
-export default function Card({bkgColor, borderColor}) {
+interface Props {
+  bkgColor: { backgroundColor: string };
+  borderColor: { borderColor: string };
+  children: React.ReactNode;
+}
+
+export default function aCard({ bkgColor, borderColor, children }: Props) {
   return (
-      <View style={[styles.card, bkgColor, borderColor]}>
-          <View>
-              <Text style={[s.primaryColor, s.fs24, s.p4]}>Trip Tape II - Milky Chance</Text>
-
-              <DeezerWidget album_id="352452547" />
-              
-              <Text style={[s.primaryColor, s.fs12, s.p4]}>Et omnia in potestate nostra esse natura liber, libera, libere valeant, sed illis non est in nostra potestate sunt infirmi, sevilis, licet, lex pertinet.</Text>
-                 
-              <View style={[styles.row, s.m4, s.w100, s.center]}></View>
-          </View>
+    <Card style={[{ margin: 10, borderRadius: 10, overflow: 'hidden', borderColor: 'red', borderWidth: 2 }, bkgColor]}>
+      <View>
+        {children}
       </View>
+    </Card>
   );
-  }
-
-
-const deviceWidth = Math.round(Dimensions.get('window').width)
-const styles = StyleSheet.create({
-    card: {
-        width: deviceWidth - 50,
-        alignSelf: 'center',
-        borderRadius: 8,
-        borderWidth: 1,
-        textAlign: 'center',
-    },
-    row: {
-        flexDirection: "row",
-        flexWrap: "wrap",
-        alignSelf: "center",
-    },
-});
+}

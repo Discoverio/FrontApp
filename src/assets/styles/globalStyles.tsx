@@ -33,13 +33,10 @@ export default StyleSheet.create({
   secondaryColor: {
     color: '#5db0cd'
   },
-  backgroundColor: {
-    color: '#ffffff'
+ 
+  extraColor:{
+    color: '#174B6A'
   },
-  foregroundColor: {
-    color: '#dbe9ee'
-  },
-
 
 
   fs12: {
@@ -64,6 +61,12 @@ export default StyleSheet.create({
   m4: {
     margin: '4%'
   },
+  m0_b:{
+    marginBottom: '0%'
+  },
+  m2: {
+    margin: '2%'
+  },  
   w9: {
     width: '9%'
   },
@@ -83,6 +86,10 @@ export default StyleSheet.create({
 
   center: {
     alignItems: "center",
+  },
+
+  w700:{
+    fontWeight: 700,
   }
 
 });
