@@ -38,6 +38,9 @@ export default StyleSheet.create({
     color: '#174B6A'
   },
 
+  whiteColor:{
+    color: '#FFFFFF'
+  },
 
   fs12: {
     fontSize: 12

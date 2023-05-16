@@ -7,9 +7,12 @@ import HeaderApp from '..//components/HeaderApp';
 import s from '../assets/styles/globalStyles';
 import { StatusBar } from 'react-native';
 
+
 import { HomeScreen } from '../screens/HomeScreen';
-import { LoginScreen } from '../screens/LoginScreen';
-import { ProfileScreen } from '../screens/ProfileScreen';
+// import { LoginScreen } from '../screens/LoginScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import { HystoryScreen } from '../screens/HystoryScreen';
+import { FavScreen } from '../screens/FavScreen';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -26,7 +29,20 @@ const AppNavigator = () => {
           title: ({ color, focused }) => (
             <Ionicons
               size={25}
-              name={focused ? 'home' : 'home-outline'}
+              name={focused ? 'star' : 'star-outline'}
+              color={focused ? '#fff' : '#fff'}
+            />
+          ),
+        }}
+        component={FavScreen}
+        name='Fav'
+      />
+      <Tab.Screen
+        options={{
+          title: ({ color, focused }) => (
+            <Ionicons
+              size={25}
+              name={focused ? 'home-sharp' : 'home-outline'}
               color={focused ? '#fff' : '#fff'}
             />
           ),
@@ -39,26 +55,13 @@ const AppNavigator = () => {
           title: ({ color, focused }) => (
             <Ionicons
               size={25}
-              name={focused ? 'people-sharp' : 'people-outline'}
+              name={focused ? 'person-circle' : 'person-circle-outline'}
               color={focused ? '#fff' : '#fff'}
             />
           ),
         }}
         component={ProfileScreen}
-        name='Friends'
-      />
-      <Tab.Screen
-        options={{
-          title: ({ color, focused }) => (
-            <Ionicons
-              size={25}
-              name={focused ? 'lock-closed' : 'lock-open-outline'}
-              color={focused ? '#fff' : '#fff'}
-            />
-          ),
-        }}
-        component={LoginScreen}
-        name='Login'
+        name='Profile'
       />
 
     </Tab.Navigator>
