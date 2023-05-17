@@ -18,7 +18,7 @@ const onSubmit = (values: FormValues) => {
   console.log(values);
 };
 
-const LoginForm = () => {
+const RegisterForm = () => {
   return (
     <View style={styles.container}>
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
@@ -37,8 +37,15 @@ const LoginForm = () => {
               secureTextEntry
               onChangeText={handleChange('password')}
             />
+            <Input
+              style={styles.input}
+              placeholder='Confirm Password'
+              value={values.password}
+              secureTextEntry
+              onChangeText={handleChange('password')}
+            />
             <Button style={styles.button} onPress={handleSubmit}>
-              Login
+              Register
             </Button>
 
           </>
@@ -52,19 +59,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    marginTop: 24,
     alignItems: 'center',
   },
   input: {
     width: '80%',
-    marginVertical: 10,
+    backgroundColor:"none",
+    borderColor:"none",
+    marginVertical: 16
   },
   button: {
     width: '80%',
-    marginTop: 32,
+    marginTop: 204,
     borderRadius: 12,
     backgroundColor:'#5db0cd',
     borderColor:'#5db0cd'
   },
 });
 
-export default LoginForm;
+export default RegisterForm;

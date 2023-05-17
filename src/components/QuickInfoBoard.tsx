@@ -17,7 +17,7 @@ const QuickInfoBoard = ({ credits, activities, trophyColor }) => {
         <Text style={{ fontSize: 14, fontWeight: '700', color: '#18206F' }}>{credits} crédits</Text>
         <Text style={{ fontSize: 14, fontWeight: '700', color: '#18206F' }}>{activities} activités réalisées</Text>
       </View>
-      <View style={{ marginRight: 10 }}>
+      <View style={{ marginRight: 10}}>
         <TrophyIcon color={trophyColor} />
       </View>      
     </View>

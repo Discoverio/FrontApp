@@ -13,6 +13,8 @@ import { HomeScreen } from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { HystoryScreen } from '../screens/HystoryScreen';
 import { FavScreen } from '../screens/FavScreen';
+import { LoginScreen } from '../screens/LoginScreen';
+import { RegisterScreen } from '../screens/RegisterScreen';
 
 const Tab = createMaterialTopTabNavigator();
 

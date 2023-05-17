@@ -93,6 +93,15 @@ export default StyleSheet.create({
 
   w700:{
     fontWeight: 700,
+  },
+
+  logo: {
+    position: 'absolute',
+    top: 100,
+    right: 40,
+    width:80,
+    height:80
   }
+
 
 });
