@@ -3,7 +3,7 @@ import { List, ListItem, Text } from '@ui-kitten/components';
 
 const KittenList = ({ data }) => {
   const renderItem = ({ item }) => (
-    <ListItem title={item.title} description={`Element ${item.id}`} />
+    <ListItem title={item.title} description={`Music ${item.id}`} />
   );
 
   return (

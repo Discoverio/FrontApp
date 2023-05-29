@@ -2,12 +2,21 @@ import React, { useState } from 'react';
 import { Pressable, StyleSheet } from 'react-native';
 import s from '../../assets/styles/globalStyles';
 import Ionicons from '@expo/vector-icons/Ionicons'
+import { sendRequest } from '../../../../Backend/src/services/musics/interactions/checkbox';
 
-export default function MyCheckbox() {
+export default function MyCheckbox({ albumId }) {
   const [checked, onChange] = useState(false);
 
   function onCheckmarkPress() {
     onChange(!checked);
+
+    if (!checked) {
+      console.log("done");
+      sendRequest("done", "POST", 1, { id: albumId });
+    } else {
+      console.log("undone");
+      sendRequest("done", "DELETE", 1, { id: albumId });
+    }
   }
 
   return (

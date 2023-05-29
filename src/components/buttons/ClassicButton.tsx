@@ -2,11 +2,11 @@ import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const ClassicButton = ({ title }) => {
+const ClassicButton = ({ title, destination }) => {
   const navigation = useNavigation();
 
   const handlePress = () => {
-    navigation.navigate('DangerScreen');
+    navigation.navigate(destination);
   };
 
   return (
@@ -15,6 +15,7 @@ const ClassicButton = ({ title }) => {
     </TouchableOpacity>
   );
 };
+
 
 const styles = StyleSheet.create({
   button: {

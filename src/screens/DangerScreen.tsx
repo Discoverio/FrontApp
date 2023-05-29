@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import DangerButton from '../components/buttons/DangerButton';
 import CircleIcon from '../components/CircleIcon';
-import SettingsButton from '../components/buttons/SettingsButton';
+import CloseButton from '../components/buttons/CloseButton';
 import KittenList from '../components/KittenList';
 import s from '../assets/styles/globalStyles';
 import QuickInfoBoard from '../components/QuickInfoBoard';
@@ -28,7 +28,7 @@ const DangerScreen = () => {
                     <Text style={[s.whiteColor, s.fs36, s.p4]}>Hi John Doe !</Text>
                     {/* <Ionicons name="person-circle-outline" size={100} color="#fff" /> */}
                     <CircleIcon></CircleIcon> { /* mettre en paramètre la couleur #eedbdb */}
-                    <SettingsButton></SettingsButton> 
+                    <CloseButton></CloseButton> 
                     {/* <List data={data} renderItem={renderItem} /> */}
                 </View>
                 <View>

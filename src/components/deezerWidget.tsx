@@ -107,9 +107,9 @@ const DeezerWidget: React.FC<Props> = ({ album_id }) => {
       </View>
 
       <Layout style={styles.interactives_widget} level='1'>
-        <Layout style={styles.interactives_column}> <MyLovebox /> </Layout>
+        <Layout style={styles.interactives_column}> <MyLovebox albumId={album_id} /> </Layout>
         <Layout style={styles.interactives_column}> <MyPlusbox /> </Layout>
-        <Layout style={styles.interactives_column}> <MyCheckbox /> </Layout>
+        <Layout style={styles.interactives_column}> <MyCheckbox albumId={album_id} /> </Layout>
       </Layout>
 
     </Card>
