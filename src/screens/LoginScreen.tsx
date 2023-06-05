@@ -5,11 +5,8 @@ import LoginForm from '../components/loginWidget';
 import { Image } from 'react-native';
 import s from '../assets/styles/globalStyles';
 import { State, Text } from '@ui-kitten/components';
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import GoogleLoginWidget from '../components/buttons/sso/google';
-
 import WelcomeInfoBoard from '../components/buttons/WelcomeInfoBoard';
-import { Button } from '@ui-kitten/components';
 
 interface Props {
   onLogin: () => void; // Define the type of onLogin prop
