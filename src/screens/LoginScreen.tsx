@@ -4,14 +4,20 @@ import HeaderApp from '../components/HeaderApp';
 import LoginForm from '../components/loginWidget';
 import { Image } from 'react-native';
 import s from '../assets/styles/globalStyles';
-import { Text } from '@ui-kitten/components';
+import { State, Text } from '@ui-kitten/components';
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import GoogleLoginWidget from '../components/buttons/sso/google';
 
 import WelcomeInfoBoard from '../components/buttons/WelcomeInfoBoard';
 import { Button } from '@ui-kitten/components';
-export class LoginScreen extends React.Component<{}, State> {
-    render(): React {
+
+interface Props {
+  onLogin: () => void; // Define the type of onLogin prop
+}
+
+export class LoginScreen extends React.Component<Props, State> {
+    render(): React.ReactNode { // Change the return type to React.ReactNode
+        const { onLogin } = this.props;
         return (
             <View style={{ backgroundColor: '#FFFFFF'}}>
               {/* <HeaderApp /> */}
@@ -28,18 +34,13 @@ export class LoginScreen extends React.Component<{}, State> {
               <View style={{width: '80', alignItems: "center", paddingTop: 60, paddingBottom: 80 }}>
               <Text style={{color: '#174B6A', fontWeight:'640'}}>Or continue with</Text>
                 <View style={{paddingTop: 20, paddingBottom: 20 }}>
-                  <GoogleLoginWidget></GoogleLoginWidget>
+                  <GoogleLoginWidget onLogin={onLogin} />
                 </View>
               </View>
               <View style={{width: '80', alignItems: "center", paddingTop: 60, paddingBottom: 80 }}>
                 <Text style={{color: '#174B6A', fontWeight:'640'}}>Not Member? <a style={{color: '#5DB0CD', fontWeight:'640'}} href="http://">Create account</a></Text> 
-
               </View>              
-
             </View>
           );
-          
-    }
-    
+    }  
 }
-
