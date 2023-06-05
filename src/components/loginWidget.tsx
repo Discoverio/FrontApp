@@ -2,7 +2,6 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Formik } from 'formik';
 import { Input, Button } from '@ui-kitten/components';
-import GoogleLoginWidget from '../components/buttons/sso/google';
 
 interface FormValues {
   email: string;
