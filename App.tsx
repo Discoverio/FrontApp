@@ -5,8 +5,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import DangerScreen from './src/screens/DangerScreen';
 import { ApplicationProvider } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
-import SSO from './src/components/SSO'; // Update the import statement
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import { LoginScreen } from './src/screens/LoginScreen';
 
 interface State {
@@ -48,10 +46,6 @@ class App extends React.Component<{}, State> {
               <Stack.Screen name='SSO'>
                 {(props) => (
                   <LoginScreen {...props} onLogin={this.handleLogin} />
-                  /* <GoogleOAuthProvider clientId="674546016382-4b1st85hr20iv3ckr1mdrtt0itrvrg7n.apps.googleusercontent.com">
-                      <GoogleLogin
-                        onSuccess={this.handleLogin} />
-                    </GoogleOAuthProvider> */
                 )}
               </Stack.Screen>
             )}
