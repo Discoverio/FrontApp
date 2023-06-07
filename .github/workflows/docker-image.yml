@@ -23,10 +23,3 @@ jobs:
 
       - name: Build Expo project
         run: npm run build
-
-      - name: Archive artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: built-app
-          path: .expo/build
-
