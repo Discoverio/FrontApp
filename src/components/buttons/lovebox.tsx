@@ -3,12 +3,33 @@ import { Pressable, StyleSheet } from 'react-native';
 import s from '../../assets/styles/globalStyles';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { sendRequest } from '../../../../Backend/src/services/musics/interactions/checkbox';
+import axios from 'axios';
+
+async function getUserId() {
+  try {
+    const response = await axios.get('http://localhost:3000/session/userId');
+    console.log(response.data);
+    
+    return response.data;
+  } catch (error) {
+    console.error("Une erreur s'est produite lors de la récupération du userId :", error);
+    return null;
+  }
+}
 
 export default function MyLovebox({ albumId }) {
   const [checked, onChange] = useState(false);
-
+  let userId;
+  getUserId()
+    .then(id => {
+      userId = id;
+    })
+    .catch(error => {
+      console.error(error);
+    });
   function onCheckmarkPress() {
     let nextStep;
+
     
     if (!checked) {
       // Étape 1: Passage à l'étape "heart"
@@ -26,17 +47,19 @@ export default function MyLovebox({ albumId }) {
     if (nextStep === "heart") {
       // Effectuer des opérations spécifiques à l'étape "heart"
       console.log("Cela fonctionne : Étape heart");
-      sendRequest("liked", "POST", 1, { id: albumId });
+      console.log(userId, typeof userId);
+      
+      sendRequest("liked", "POST", userId, { id: albumId });
 
     } else if (nextStep === "heart-dislike") {
       // Effectuer des opérations spécifiques à l'étape "heart-dislike"
       console.log("Cela fonctionne : Étape heart-dislike");
-      sendRequest("liked", "DELETE", 1, { id: albumId });
-      sendRequest("unliked", "POST", 1, { id: albumId });
+      sendRequest("liked", "DELETE", userId, { id: albumId });
+      sendRequest("unliked", "POST", userId, { id: albumId });
 
     }else{
       // Effectuer des opérations spécifiques à l'étape "clear"      
-      sendRequest("unliked", "DELETE", 1, { id: albumId });
+      sendRequest("unliked", "DELETE", userId, { id: albumId });
     }
   }
   
