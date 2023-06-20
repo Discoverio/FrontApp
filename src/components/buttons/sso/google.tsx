@@ -12,7 +12,7 @@ const GoogleLoginWidget: React.FC<Props> = ({ onLogin }) => {
   const setAuthData = useStore((state: any) => state.setAuthData);
   // Get the client ID from environment variable or use a default value
   const clientId = Constants.manifest?.extra?.REACT_APP_GOOGLE_CLIENT_ID || '';
-  const backend_adress = Constants.manifest?.extra?.REACT_APP_BACKEND_ADRESS || '';
+  const backend_adress = Constants.manifest?.extra?.REACT_APP_BACKEND_ADRESS_LOGIN || '';
   const handleSuccess = async (credentialResponse: any) => {
     console.log(credentialResponse);
     try {

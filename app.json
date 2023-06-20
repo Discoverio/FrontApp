@@ -36,7 +36,8 @@
     },
     "extra": {
       "REACT_APP_GOOGLE_CLIENT_ID": "674546016382-4b1st85hr20iv3ckr1mdrtt0itrvrg7n.apps.googleusercontent.com",
-      "REACT_APP_BACKEND_ADRESS": "http://localhost:3000/login"
+      "REACT_APP_BACKEND_ADRESS_LOGIN": "http://localhost:3000/login",
+      "REACT_APP_BACKEND_ADRESS": "http://localhost:3000"
     }
   }
 }

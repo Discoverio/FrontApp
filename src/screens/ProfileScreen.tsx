@@ -6,7 +6,61 @@ import KittenList from '../components/KittenList';
 import s from '../assets/styles/globalStyles';
 import QuickInfoBoard from '../components/QuickInfoBoard';
 import DangerButton from '../components/buttons/DangerButton';
-import { fetchDataForFirstName, fetchDataForLastName } from '../../../Backend/src/auth/profile/infos/export';
+import axios from 'axios';
+import Constants from 'expo-constants';
+
+// Fonction pour récupérer la valeur de objectUserId à partir du backend
+async function fetchObjectUserId() {
+  try {
+    const response = await axios.get(`${Constants.manifest?.extra?.REACT_APP_BACKEND_ADRESS}/session/userId`);
+    return response.data; // Valeur de objectUserId
+    console.log(response.data);
+    
+  } catch (error) {
+    console.error('Erreur lors de la récupération de objectUserId :', error);
+    return "0"
+    // Gérer l'erreur ou afficher un message approprié
+  }
+}
+
+export const fetchDataForFirstName = async () => {
+  const objectUserId = await fetchObjectUserId();
+  return axios.get(`${Constants.manifest?.extra?.REACT_APP_BACKEND_ADRESS}/infos/profile/firstname/${objectUserId}`)
+    .then(response => {
+      // Récupérer la chaîne de caractères
+      const firstName = response.data;
+      
+      // Utiliser la chaîne de caractères comme nécessaire
+      console.log(firstName); // Affiche "John"
+
+      // Retourner la chaîne de caractères si nécessaire
+      return firstName;
+    })
+    .catch(error => {
+      // Gérer les erreurs de requête
+      console.error('Erreur lors de la requête:', error);
+    });
+};
+
+export const fetchDataForLastName = async () => {
+  const objectUserId = await fetchObjectUserId();
+  return axios
+    .get(`${Constants.manifest?.extra?.REACT_APP_BACKEND_ADRESS}/infos/profile/lastname/${objectUserId}`)
+    .then(response => {
+      // Récupérer la chaîne de caractères
+      const lastName = response.data;
+      
+      // Utiliser la chaîne de caractères comme nécessaire
+      console.log(lastName); // Affiche "Doe"
+
+      // Retourner la chaîne de caractères si nécessaire
+      return lastName;
+    })
+    .catch(error => {
+      // Gérer les erreurs de requête
+      console.error('Erreur lors de la requête:', error);
+    });
+};
 
 const data = [
     { id: 1, title: 'Option 1' },
