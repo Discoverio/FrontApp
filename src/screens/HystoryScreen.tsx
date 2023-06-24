@@ -13,7 +13,7 @@ async function fetchObjectUserId() {
   try {
     const response = await axios.get(`${Constants.manifest?.extra?.REACT_APP_BACKEND_ADRESS}/session/userId`);
     return response.data; // Valeur de objectUserId
-    console.log(response.data);
+    
     
   } catch (error) {
     console.error('Erreur lors de la récupération de objectUserId :', error);

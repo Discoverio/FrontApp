@@ -33,7 +33,7 @@ export function sendRequest(action: string, method: string, id: any, content: { 
 async function getUserId() {
   try {
     const response = await axios.get(`${Constants.manifest?.extra?.REACT_APP_BACKEND_ADRESS}/session/userId`);
-    console.log(response.data);
+    
     
     return response.data;
   } catch (error) {
