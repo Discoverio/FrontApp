@@ -9,7 +9,7 @@
 
 <p align="center">
   Project authors : Simon MANIEZ, Yoann PETIT. [Discoverio 2023]
-  <a href="https://reactnative.dev/" target="blank"><img src="https://commons.wikimedia.org/wiki/File:React-icon.svg" width="200" alt="ReactNative Logo" /></a>
+  <a href="https://reactnative.dev/" target="blank"><img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react-native/react-native.png" width="200" alt="ReactNative Logo" /></a>
 </p>
 
 
